@@ -226,6 +226,7 @@ function Library:CreateWindow(Config, Parent)
 			Section.Name = Name .. " S"
 			Section.Parent = GetSide(false)
 			Section.BorderColor3 = Color3.fromRGB(0, 255, 170)
+			Section.BorderSizePixel = 1
 
 			Section.Title.Text = Name
 			Section.Title.Size = UDim2.new(0,Section.Title.TextBounds.X + 10,0,2)
