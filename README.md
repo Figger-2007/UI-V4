@@ -170,6 +170,7 @@ function Library:CreateWindow(Config, Parent)
 		TabButton.Name = Name .. " TB"
 		TabButton.Parent = TBContainer
 		TabButton.Title.Text = Name
+		TabButton.TextStrokeTransparency = 0.3
 		TabButton.BackgroundColor3 = Config.Color
 
 		table.insert(Library.ColorTable, TabButton)
