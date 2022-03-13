@@ -615,6 +615,37 @@ function Library:CreateWindow(Config, Parent)
 						end)
 					end
 				end
+				
+				function DropdownInit:Up()
+                    for _,OptionName in pairs(OptionTable) do
+    					local Option = Folder.Option:Clone()
+    					Option.Name = OptionName
+    					Option.Parent = Dropdown.Container.Holder.Container
+    
+    					Option.Title.Text = OptionName
+    					Option.BackgroundColor3 = Config.Color
+    					Option.Size = UDim2.new(1,0,0,Option.Title.TextBounds.Y + 5)
+    					Dropdown.Container.Holder.Size = UDim2.new(1,-5,0,Dropdown.Container.Holder.Container.ListLayout.AbsoluteContentSize.Y)
+    					table.insert(Library.ColorTable, Option)
+    
+    					Option.MouseButton1Down:Connect(function()
+    						Option.BackgroundTransparency = 0
+    					end)
+    
+    					Option.MouseButton1Up:Connect(function()
+    						Option.BackgroundTransparency = 1
+    					end)
+    
+    					Option.MouseLeave:Connect(function()
+    						Option.BackgroundTransparency = 1
+    					end)
+    
+    					Option.MouseButton1Click:Connect(function()
+    						Dropdown.Container.Value.Text = OptionName
+    						Callback(OptionName)
+    					end)
+    				end
+				end
 
 				function DropdownInit:GetOption()
 					return Dropdown.Container.Value.Text
