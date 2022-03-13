@@ -199,7 +199,7 @@ function Library:CreateWindow(Config, Parent)
 		end
 
 		TabButton.MouseButton1Click:Connect(function()
-		    TabButton.TextColor3 = Color3.fromRGB(0,0,0)
+		    TabButton.TextStrokeTransparency = 0.3
 			CloseAll()
 			ResetAll()
 			Tab.Visible = true
