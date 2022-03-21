@@ -227,7 +227,7 @@ function Library:CreateWindow(Config, Parent)
 			local Section = Folder.Section:Clone()
 			Section.Name = Name .. " S"
 			Section.Parent = GetSide(false)
-			Section.BorderColor3 = Color3.fromRGB(254, 0, 87)
+			Section.BorderColor3 = Color3.fromRGB(254, 255, 255)
 			Section.BorderSizePixel = 1
 
 			Section.Title.Text = Name
